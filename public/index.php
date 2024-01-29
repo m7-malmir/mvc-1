@@ -7,12 +7,12 @@ function show($stuff){
     print_r($stuff);
     echo "</pre>";
 }
-    function splitURL(){
+  private  function splitURL(){
         $URL=$_GET['url'] ?? 'home';
         $URL=explode("/", $URL);
         return $URL;
     }
-  function loadController(){
+private  function loadController(){
         $URL=splitURL();
 
         $filename="../app/controllers/".ucfirst($URL[0]).".php";
