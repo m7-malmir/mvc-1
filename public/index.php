@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-class App{}
+class App{
 function show($stuff){
     echo "<pre>";
     print_r($stuff);
@@ -24,6 +24,6 @@ function show($stuff){
                 require_once $filename;
         }
     }
-
+}
 
     loadController();
