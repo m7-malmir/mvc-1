@@ -2,11 +2,7 @@
 session_start();
 
 class App{
-function show($stuff){
-    echo "<pre>";
-    print_r($stuff);
-    echo "</pre>";
-}
+
   private  function splitURL(){
         $URL=$_GET['url'] ?? 'home';
         $URL=explode("/", $URL);
