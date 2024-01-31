@@ -1,7 +1,7 @@
 <?php
 
-function show($stuff){
-    echo "<pre>";
-    print_r($stuff);
-    echo "</pre>";
-}
+require 'config.php';
+require 'functions.php';
+require 'Model.php';
+require 'Controller';
+require 'Database.php';
