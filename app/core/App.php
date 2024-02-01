@@ -22,4 +22,3 @@ private  function loadController(){
     }
 }
 
- loadController(); 
