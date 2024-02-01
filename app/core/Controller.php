@@ -1,3 +1,4 @@
+<?php
 class Controller {
     public function view($name){
         $filename="../app/controllers/".$URL[0].".view.php";
