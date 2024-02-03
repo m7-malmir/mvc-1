@@ -19,6 +19,7 @@ class App
 
             require_once $filename;
         }
+call_user_func_array([$home=>'index.php'],['a'=>'some a','b'=>'some b']);
     }
 }
 
