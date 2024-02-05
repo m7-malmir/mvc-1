@@ -1,6 +1,9 @@
 <?php
 class App
 {
+private $controller= 'home';
+
+private $methid= 'index';
     private function splitURL()
     {
         $URL = $_GET['url'] ?? 'home';
@@ -14,13 +17,15 @@ class App
         $filename = "../app/controllers/" . ucfirst($URL[0]) . ".php";
         if (file_exists($filename)) {
             require_once $filename;
-        } else {
+     $this->controller=
+ucfirst($URL[0]);        } else {
             $filename = "../app/controllers/_404.php";
 
             require_once $filename;
-        }
-$home=new Home;
-call_user_func_array([$home=>'index.php'],['a'=>'some a','b'=>'some b']);
+
+$this->controller="_404";        }
+$controller=new $this->controller;
+call_user_func_array([$controller=>$this->$methid],['a'=>'some a','b'=>'some b']);
     }
 }
 
