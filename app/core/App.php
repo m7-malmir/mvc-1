@@ -25,7 +25,7 @@ ucfirst($URL[0]);        } else {
 
 $this->controller="_404";        }
 $controller=new $this->controller;
-call_user_func_array([$controller=>$this->$methid],['a'=>'some a','b'=>'some b']);
+call_user_func_array([$controller=>$this->methid],[]);
     }
 }
 
