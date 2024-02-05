@@ -1,9 +1,7 @@
 <?php
 
 class Home extends Controller{
-    public function index(){
+    public function index($a='',$b='',$c=''){
         echo 'this ia home controller';
     }
 }
-$home=new Home;
-$home->index();
