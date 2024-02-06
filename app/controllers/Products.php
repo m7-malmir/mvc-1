@@ -1,6 +1,6 @@
 <?php
 
-class Product extends Controller{
+class Products extends Controller{
     public function index(){
         echo 'this ia product controller';
     }
