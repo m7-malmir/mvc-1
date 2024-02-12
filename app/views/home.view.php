@@ -1,1 +1,13 @@
-this is home view
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="<?= ROOT; ?>/public/assets/css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>home view is here</h1>
+    <img src="<?= ROOT; ?>/public/assets/img/image.jpg" alt="">
+</body>
+</html>
