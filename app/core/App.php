@@ -1,8 +1,7 @@
 <?php
 class App
 {
-    private $controller = 'home';
-
+    private $controller = 'Home';
     private $method = 'index';
     private function splitURL()
     {
@@ -21,13 +20,11 @@ class App
                 ucfirst($URL[0]);
         } else {
             $filename = "../app/controllers/_404.php";
-
             require_once $filename;
-
             $this->controller = "_404";
         }
         $controller = new $this->controller;
-        call_user_func_array([$controller =>$this->method], []);
+        call_user_func_array([$controller,$this->method], []);
     }
 }
 
