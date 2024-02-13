@@ -1,5 +1,5 @@
 <?php
-trait Database{
+class Database{
     private function connect(){
 
         $string="mysql:hostname=".DBHOST.";dbname=".DBNAME;
