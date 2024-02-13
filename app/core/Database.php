@@ -20,6 +20,23 @@ class Database{
         
         return false;
         
+    }
+
+
+public function get_row($query,$data=[]){
+        $con=$this->connect();
+        $stm=$con->prepare($query);
+        $check =$stm->execute($data);
+
+        if($check){
+            $res=$stm->fetchAll(PDO::FETCH_OBJ);
+            if(is_array($res) && count($res)){
+                return $res[0];
+            }
+        }
+        
+        return false;
+        
 
 
     }
