@@ -6,9 +6,12 @@ class Home extends Controller
     {
        $model=new Model;
     //    $arr['id']=1;
-       $arr['name']='mamad';
-       $res=$model->where($arr);
-       show($res);
+    $arr['name']='maamd';
+  
+    $arr['age']=30;
+  
+       $res=$model->insert($arr);
+        show($res);
         $this->view('home');
     }
 }

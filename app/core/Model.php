@@ -29,6 +29,15 @@ class Model
 
     public function insert($data)
     {
+        $keys=array_keys($data);
+        $query="INSERT INTO $this->table (".implode(',',$keys).") VALUES (:".implode(',:',$keys).")";
+        
+         if($this->query($query,$data)){
+            echo 'true';
+         }else{
+            echo 'false';
+         }
+
     }
 
 
