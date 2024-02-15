@@ -4,7 +4,7 @@ class Home extends Controller
 {
     public function index($a = '', $b = '', $c = '')
     {
-       $model=new Model;
+       $model=new User;
     //    $arr['id']=1;
     $arr['name']='maamd';
   

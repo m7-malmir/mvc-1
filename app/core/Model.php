@@ -2,7 +2,7 @@
 /**
 * Main class model
 */
-class Model 
+trait Model 
 {
     protected $table='users';
     protected $limit=1;
