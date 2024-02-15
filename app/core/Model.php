@@ -4,14 +4,23 @@
 */
 class Model 
 {
+    protected $table='users';
+    protected $limit=1;
+    protected $offset=0;
     use Database;
-    public function test(){
-        $quey='select * from users';
-        $res=$this->query($quey);
-        show($res);
-    }
     public function where($data)
     {
+        $keys=array_keys($data);
+        $query="select * from $this->table where ";
+
+        foreach ($keys as $key) {
+            $query .= "$key" ." = :"."$key "." && ";
+        }
+        $query=trim($query," && ");
+        $query .=" limit $this->limit offset $this->offset";
+        //echo $query;
+        return $this->query($query,$data);
+
     }
     public function first($data)
     {
