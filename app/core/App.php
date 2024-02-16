@@ -6,7 +6,7 @@ class App
     private function splitURL()
     {
         $URL = $_GET['url'] ?? 'home';
-        $URL = explode("/", $URL);
+        $URL = explode("/",trim($URL,'/') );
         return $URL;
     }
     public function loadController()
@@ -30,8 +30,9 @@ class App
             $this->controller = "_404";
             }
         }
+        show($URL);
         $controller = new $this->controller;
-        call_user_func_array([$controller,$this->method], []);
+        call_user_func_array([$controller,$this->method],$URL);
     }
 }
 

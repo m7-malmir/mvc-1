@@ -29,17 +29,17 @@ trait Model
 
     public function insert($data)
     {
-        if(!empty($this->allowedColumns)){
-                foreach ($data as $key => $value) {
-                    if(!in_array($key,$this->allowedColumns)){
-                        unset($data[$key]);
-                    }
+        if (!empty($this->allowedColumns)) {
+            foreach ($data as $key) {
+                if (!in_array($key, $this->allowedColumns)) {
+                    unset($data[$key]);
                 }
+            }
+         
         }
-            $keys=array_keys($data);
-            $query="INSERT INTO $this->table (".implode(',',$keys).") VALUES (:".implode(',:',$keys).")";
-            $this->query($query,$data);
-          
+        $keys = array_keys($data);
+        $query = "INSERT INTO $this->table (" . implode(',', $keys) . ") VALUES (:" . implode(',:', $keys) . ")";
+        $this->query($query, $data);      
     }
 
 
