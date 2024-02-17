@@ -7,6 +7,7 @@ trait Model
     protected $table='users';
     protected $limit=1;
     protected $offset=0;
+    public $errors=[];
     use Database;
     public function where($data)
     {
