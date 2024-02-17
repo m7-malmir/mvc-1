@@ -10,7 +10,8 @@ if($user->validate($_POST)){
       $user->insert($_POST);
        redirect('home');
 }
-        $this->view('signup');
+         $data['errors']=$user->errors;
+        $this->view('signup',$data);
     }
     // public function edit($a = '', $b = '', $c = '')
     // {
