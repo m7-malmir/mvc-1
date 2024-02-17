@@ -68,6 +68,15 @@
     
 <main class="form-signin w-100 m-auto">
   <form  method="post">
+
+
+<?php if(!empty($errors)) :
+?>
+
+<div class="alert alert-danger">
+<?php implode("<br>",$errors); ?>
+</div>
+<?php endif; ?>
     <img class="mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
     <h1 class="h3 mb-3 fw-normal">Create account</h1>
 
