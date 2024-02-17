@@ -68,13 +68,10 @@
     
 <main class="form-signin w-100 m-auto">
   <form  method="post">
-
-
 <?php if(!empty($errors)) :
 ?>
-
 <div class="alert alert-danger">
-<?php implode("<br>",$errors); ?>
+<?= implode("<br>",$errors) ?>
 </div>
 <?php endif; ?>
     <img class="mb-4" src="https://getbootstrap.com/docs/5.2/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
@@ -101,8 +98,5 @@
 <div>  <a href="<?= ROOT ?>public/home">back to Home</a></div>
   <div><a href="<?= ROOT ?>public/login">Login</a></div>
 </main>
-
-
-    
   </body>
 </html>
