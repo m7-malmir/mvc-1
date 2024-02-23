@@ -63,8 +63,7 @@
     <!-- Custom styles for this template -->
     <link href="<?= ROOT ?>public/assets/css/signin.css" rel="stylesheet">
   </head>
-  <body class="text-center">
-    
+<body class="text-center">
 <main class="form-signin w-100 m-auto">
   <form  method="post">
     <?php if(!empty($errors)) :
