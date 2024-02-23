@@ -5,7 +5,8 @@ class Home
     use Controller;
     public function index()
     {
-        $this->view('home');
+        $data['username']=empty($_SESSION['USER']) ? 'user':  $_SESSION['USER']->email;
+        $this->view('home',$data);
     }
     // public function edit($a = '', $b = '', $c = '')
     // {

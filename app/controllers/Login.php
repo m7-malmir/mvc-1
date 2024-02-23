@@ -8,13 +8,19 @@ class Login
         $data=[];
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             $user = new User;
-            if ($user->validate($_POST)) {
-                $user->insert($_POST);
+            $arr['email']=$_POST['email'];
+            $row=$user->first($arr);
                 //redirect('signup');
+            if($row){
+                if($row->password === $_POST['password']) {
+                    $_SESSION['USER'] = $row;
+                    redirect('home');
+                }
             }
+            $user->errors='wrong email or pass';
             $data['errors'] = $user->errors;
         }
-        $this->view('login');
+        $this->view('login',$data);
     }
     // public function edit($a = '', $b = '', $c = '')
     // {

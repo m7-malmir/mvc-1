@@ -25,6 +25,18 @@ trait Model
     }
     public function first($data)
     {
+        $keys = array_keys($data);
+        $query = "select * from $this->table where ";
+
+        foreach ($keys as $key) {
+            $query .= "$key" . " = :" . "$key " . " && ";
+        }
+        $query = trim($query, " && ");
+        $query .= " limit $this->limit offset $this->offset";
+        //echo $query;
+        $res= $this->query($query, $data);
+        if($res){return  $res[0];}
+        return false;
     }
 
 
