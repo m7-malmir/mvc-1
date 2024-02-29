@@ -1,1 +1,0 @@
-this is product view page
